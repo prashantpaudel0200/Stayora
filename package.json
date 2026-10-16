@@ -1,0 +1,24 @@
+{
+  "name": "stayora",
+  "version": "1.0.0",
+  "description": "**Stayora** is a modern accommodation booking platform that connects travelers with unique stays, cozy homes, and memorable destinations. Discover places, explore listings, and find the perfect stay for every journey.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashantpaudel0200/Stayora.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/prashantpaudel0200/Stayora/issues"
+  },
+  "homepage": "https://github.com/prashantpaudel0200/Stayora#readme",
+  "dependencies": {
+    "ejs": "^7.0.1",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.1"
+  }
+}
