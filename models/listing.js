@@ -9,13 +9,15 @@ const listingSchema = new Schema({
     },
     description: String,
     image: {
+    filename: {
         type: String,
-        default: "https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMJA3fDA%3D",
-        set: (v) =>
-            v === ""
-                ? "https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMJA3fDA%3D"
-                : v,
+        default: "listingimage"
     },
+    url: {
+        type: String,
+        default: "https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=1064&auto=format&fit=crop"
+    }
+},
     price: Number,
     location: String,
     country: String
