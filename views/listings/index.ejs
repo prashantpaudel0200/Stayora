@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Hello i am index route</h1>
+    <a href="/listings/new">Create New Listing</a>
     <ul>
    <% for(let listings of allListings) { %> 
         <li> <a href="/listings/<%= listings.id %>"> <%= listings.title %> </a></li>
