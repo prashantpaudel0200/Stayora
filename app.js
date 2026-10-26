@@ -51,7 +51,10 @@ app.get("/listings/new", (req, res)=>{
 //UPLOAD NEW LISTING
 app.post("/listings", async(req, res)=>{
     const newListing = new Listing(req.body.listing);
-    await newListing.save();
+    await newListing.save()
+        .catch((err) => {
+            res.send("Fail to save new listing", err);
+        })
     res.redirect("/listings");
 })
 
