@@ -94,7 +94,7 @@ footer{
 
 }
 
-.add-btn{
+.add-btn, .edt-btn{
     background-color: #fe424d;
     color: white;
 }
