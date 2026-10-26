@@ -1,5 +1,5 @@
 body{
-    background-color: pink;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /*Navbar*/
@@ -48,4 +48,31 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
+}
+
+/* Card */
+.card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text p{
+    font-weight: 400;
+}
+
+/* Card Effect */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
 }
