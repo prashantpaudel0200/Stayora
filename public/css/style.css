@@ -13,3 +13,39 @@ body{
 .nav-link{
     color: #222222;
 }
+
+/* Footer */
+.f-info-links a{
+    text-decoration: none;
+    color:#222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-links a{
+    margin: 0.75rem;
+}
+
+.f-info-socials i {
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.f-info{
+    text-align: center;
+    display: flex;
+    height: 8rem;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
