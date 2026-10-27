@@ -94,7 +94,21 @@ footer{
 
 }
 
-.add-btn, .edt-btn{
+.add-btn, .edit-btn{
     background-color: #fe424d;
     color: white;
+}
+
+/* Show Image */
+.show-img{
+    height: 30vh;
+    /* object-fit: cover; */
+}
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
 }
