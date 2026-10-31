@@ -5,7 +5,7 @@
         <div class="row mt-3">
             <div class="col-8 offset-2">
                 <h1>Create a New Listing</h1>
-                <form method="POST" action="/listings" novalidate class="needs-validation">
+                <form method="POST" action="/listings"  class="needs-validation">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Title:</label>
@@ -27,6 +27,9 @@
                         <div class="mb-3 col-4">
                         <label for="price" class="form-label">Price:</label>
                         <input name="listing[price]" placeholder="1500" type="number" class="form-control" required/>
+                        <div class="invalid-feedback">
+                            Please enter a valid price.
+                        </div>
                     </div>
 
                     <div class="mb-3 col-8">
