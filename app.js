@@ -6,6 +6,7 @@ const port = 8080;
 const Listing = require("./models/listing.js");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const wrapAsync = require("./utils/wrapAsync.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/stayora";
 
@@ -49,18 +50,14 @@ app.get("/listings/new", (req, res) => {
 });
 
 //UPLOAD NEW LISTING
-app.post("/listings", async (req, res) => {
-    try {
-        const newListing = new Listing(req.body.listing);
-        await newListing.save()
-            .catch((err) => {
-                res.send("Fail to save new listing", err);
-            })
-        res.redirect("/listings");
-    } catch(err){
-        next(err);
-    }
-});
+app.post("/listings", wrapAsync(async (req, res) => {
+    const newListing = new Listing(req.body.listing);
+    await newListing.save()
+        .catch((err) => {
+            res.send("Fail to save new listing", err);
+        })
+    res.redirect("/listings");
+}));
 
 //SHOW ROUTE
 app.get("/listings/:id", async (req, res) => {
