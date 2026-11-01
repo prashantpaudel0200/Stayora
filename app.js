@@ -44,19 +44,23 @@ app.get("/listings", async (req, res) => {
 });
 
 //ADD NEW LISTING ROUTE
-app.get("/listings/new", (req, res)=>{
+app.get("/listings/new", (req, res) => {
     res.render("listings/new.ejs");
 });
 
 //UPLOAD NEW LISTING
-app.post("/listings", async(req, res)=>{
-    const newListing = new Listing(req.body.listing);
-    await newListing.save()
-        .catch((err) => {
-            res.send("Fail to save new listing", err);
-        })
-    res.redirect("/listings");
-})
+app.post("/listings", async (req, res) => {
+    try {
+        const newListing = new Listing(req.body.listing);
+        await newListing.save()
+            .catch((err) => {
+                res.send("Fail to save new listing", err);
+            })
+        res.redirect("/listings");
+    } catch(err){
+        next(err);
+    }
+});
 
 //SHOW ROUTE
 app.get("/listings/:id", async (req, res) => {
@@ -66,21 +70,21 @@ app.get("/listings/:id", async (req, res) => {
 });
 
 //EDIT ROUTE
-app.get("/listings/:id/edit", async (req, res)=>{
-    let {id} = req.params;
+app.get("/listings/:id/edit", async (req, res) => {
+    let { id } = req.params;
     let listing = await Listing.findById(id);
-    res.render("listings/edit.ejs", {listing});
+    res.render("listings/edit.ejs", { listing });
 });
 
 //UPDATE ROUTE
-app.put("/listings/:id", async (req, res)=>{
+app.put("/listings/:id", async (req, res) => {
     let { id } = req.params;
-    await Listing.findByIdAndUpdate(id, {...req.body.listing},{ runValidators: true });
+    await Listing.findByIdAndUpdate(id, { ...req.body.listing }, { runValidators: true });
     res.redirect(`/listings/${id}`);
 })
 
 //DELETE ROUTE
-app.delete("/listings/:id", async(req, res)=>{
+app.delete("/listings/:id", async (req, res) => {
     let { id } = req.params;
     await Listing.findByIdAndDelete(id);
     res.redirect("/listings");
@@ -98,6 +102,10 @@ app.delete("/listings/:id", async(req, res)=>{
 //         console.log("Sample was saved");
 //         res.send("Successful testing");
 // });
+
+app.use((err, req, res, next) => {
+    res.send("Something went wrong!");
+})
 
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
