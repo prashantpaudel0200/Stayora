@@ -115,7 +115,8 @@ app.use((req, res, next) => {
 // Global Error Handler
 app.use((err, req, res, next) => {
     let { status = 500, message="Something went wrong!" } = err;
-    res.status(status).send(message);
+    res.render("listings/error.ejs", {message});
+    // res.status(status).send(message);
 });
 
 app.listen(port, () => {
