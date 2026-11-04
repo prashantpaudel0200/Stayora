@@ -5,16 +5,17 @@
         <div class="row mt-3">
             <div class="col-8 offset-2">
                 <h1>Create a New Listing</h1>
-                <form method="POST" action="/listings"  class="needs-validation">
+                <form method="POST" action="/listings" class="needs-validation">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Title:</label>
-                        <input name="listing[title]" placeholder="Enter Title" type="text" class="form-control" required/>
+                        <input name="listing[title]" placeholder="Enter Title" type="text" class="form-control"
+                            required />
                     </div>
                     <div class="mb-3">
                         <label for="Description" class="form-label" class="form-control">Description</label>
-                        <textarea name="listing[description]" placeholder="Enter Description"
-                            class="form-control" required></textarea>
+                        <textarea name="listing[description]" placeholder="Enter Description" class="form-control"
+                            required></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -25,30 +26,35 @@
 
                     <div class="row">
                         <div class="mb-3 col-4">
-                        <label for="price" class="form-label">Price:</label>
-                        <input name="listing[price]" placeholder="1500" type="number" class="form-control" required/>
-                        <div class="invalid-feedback">
-                            Please enter a valid price.
+                            <label for="price" class="form-label">Price:</label>
+                            <input name="listing[price]" placeholder="1500" type="number" class="form-control"
+                                required />
+                            <div class="invalid-feedback">
+                                Please enter a valid price.
+                            </div>
                         </div>
+
+                        <div class="mb-3 col-8">
+                            <label for="country" class="form-label">Country:</label>
+                            <input name="listing[country]" placeholder="Enter Country" type="text" class="form-control"
+                                required>
+                        </div>
+
                     </div>
 
-                    <div class="mb-3 col-8">
-                        <label for="country" class="form-label">Country:</label>
-                        <input name="listing[country]" placeholder="Enter Country" type="text" class="form-control" required>
-                    </div>
-
-                    </div>
-                    
 
                     <div class="mb-3">
                         <label for="location" class="form-label">Location:</label>
-                        <input name="listing[location]" placeholder="Enter Location" type="text" class="form-control" required>
+                        <input name="listing[location]" placeholder="Enter Location" type="text" class="form-control"
+                            required>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-dark add-btn">Create Listing</button>
                     <br>
                     <br>
                 </form>
+                <button type="button" class="btn-outline theme-inverse"><a href="/listings"
+                        style="text-decoration: none; color: inherit;">Cancel</a></button>
             </div>
         </div>
     </body>
