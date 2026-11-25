@@ -147,3 +147,11 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+#Specific Files
+.DS_Store
+
+#Entire Folders
+node_modules/
+dist/
+coverage/
